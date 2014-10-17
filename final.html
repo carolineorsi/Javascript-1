@@ -126,9 +126,23 @@
 
 		newStuff.classList.remove('hidden');
 
+		colors = ['red', 'blue', 'green', 'yellow', 'fuchsia'];
+
+		function shuffle(o){ //v1.0
+    	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    	return o;
+    	}
+		
 		setInterval(function() {
+
 			newStuff.classList.toggle('moveright');
 		}, 1000);
+
+		setInterval(function() {
+			shuffle(colors);
+			newStuff.style.backgroundColor = colors[0];
+
+		}, 50);
 
 });
 
